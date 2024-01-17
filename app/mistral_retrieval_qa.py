@@ -5,13 +5,13 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 
-from app.chat_wrapper import Samantha, Llama2Chat
+from .chat_wrapper import Samantha, Mistral
 
 
 if __name__ == "__main__":
-    llm = Ollama(model='mistral-m3allem')
-    model = Llama2Chat(llm=llm, callbacks=[StreamingStdOutCallbackHandler()]) # type: ignore
-    loader = PyPDFLoader(file_path="./data/BENHAMIDA-ESSIA.pdf")
+    llm = Ollama(model="mistral-m3allem")
+    model = Mistral(llm=llm, callbacks=[StreamingStdOutCallbackHandler()])  # type: ignore
+    loader = PyPDFLoader(file_path="./data/2310.05421.pdf")
     documents = loader.load()
     db = Chroma.from_documents(embedding=HuggingFaceEmbeddings(), documents=documents)
     retriever = db.as_retriever()

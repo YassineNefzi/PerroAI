@@ -1,11 +1,12 @@
 from langchain_community.llms.ollama import Ollama
 from langchain_experimental.chat_models.llm_wrapper import ChatWrapper
 
+
 class CustomChatWrapper(ChatWrapper):
     llm: Ollama
 
 
-class Llama2Chat(CustomChatWrapper):
+class Mistral(CustomChatWrapper):
     @property
     def _llm_type(self) -> str:
         return "llama-2-chat"
@@ -18,6 +19,7 @@ class Llama2Chat(CustomChatWrapper):
     usr_n_end: str = " [/INST]"
     usr_0_beg: str = ""
     usr_0_end: str = " [/INST]"
+
 
 class Samantha(CustomChatWrapper):
     @property

@@ -2,7 +2,7 @@ FROM samantha-mistral:latest
 
 
 PARAMETER num_ctx 2048
-PARAMETER temperature 0.3
+PARAMETER temperature 0.2
 PARAMETER seed 42
 PARAMETER stop "<|im_end|>"
 PARAMETER stop "<|im_start|>"
