@@ -10,7 +10,7 @@ from .chat_wrapper import Samantha, Mistral
 
 if __name__ == "__main__":
     llm = Ollama(model="mistral-m3allem")
-    model = Mistral(llm=llm, callbacks=[StreamingStdOutCallbackHandler()])  # type: ignore
+    model = Mistral(llm=llm, callbacks=[StreamingStdOutCallbackHandler()])
     loader = PyPDFLoader(file_path="./data/2310.05421.pdf")
     documents = loader.load()
     db = Chroma.from_documents(embedding=HuggingFaceEmbeddings(), documents=documents)
