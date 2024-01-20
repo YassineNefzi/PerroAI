@@ -5,6 +5,7 @@ from langchain.callbacks import StreamingStdOutCallbackHandler
 from langchain.memory import ConversationBufferMemory
 
 from .chat_wrapper import Samantha, Mistral
+from .mistral_retrieval_qa import retrieve_from_pdf
 
 
 class Chatbot:
@@ -32,5 +33,7 @@ class Chatbot:
         )
 
     def generate_response(self, user_input):
-        input_data = {"input": user_input}
-        return self.chat_chain.invoke(input_data)
+        """Generates a response based on the user input and context from various sources."""
+
+        data = {"input": user_input}
+        return self.chat_chain.invoke(data)

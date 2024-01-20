@@ -2,7 +2,7 @@ FROM mistral:latest
 
 
 PARAMETER num_ctx 2048
-PARAMETER temperature 0.3
+PARAMETER temperature 0.1
 PARAMETER seed 42
 PARAMETER stop "[INST]"
 PARAMETER stop "[/INST]"
