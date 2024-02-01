@@ -4,6 +4,12 @@ WORKDIR /app
 
 COPY requirements.txt ./
 
+COPY Modelfile ./
+
+RUN curl https://ollama.ai/install.sh | sh
+
+RUN ollama create mistral-m3allem --file ./Modelfile
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
