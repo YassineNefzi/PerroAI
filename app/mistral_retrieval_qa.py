@@ -15,7 +15,8 @@ from langchain_core.prompts.chat import (
 from .chat_wrapper import Mistral
 
 system_template = """Use the following pieces of context to answer the user's question. 
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
+Keep the answers very brief and if you don't know the answer, 
+just say that you don't know, don't try to make up an answer. Answser in French.
 ----------------
 {context}"""
 
