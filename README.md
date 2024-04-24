@@ -1,4 +1,6 @@
-# PerroAI
+<h1 align="center">PerroAI</h1>
+
+![PerroAI](https://github.com/YassineNefzi/PerroAI/blob/main/perro.jfif)
 
 ## Overview
 PerroAI is a chatbot application designed to assist children with speech difficulties using the Mistral Large Language Model (LLM). The project provides two main endpoints: `/talk` for interactive chatbot sessions focusing on pronunciation and various speech exercises, and `/retrieve_from_pdf` for extracting information from PDF documents to aid in speech therapy.
